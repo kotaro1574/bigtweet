@@ -1,0 +1,64 @@
+<div>
+  <%= image_tag 'top.png', width: '315' %>
+</div>
+
+<div>
+  <p>文字が入った画像を簡単作成！<br>気軽にBigTweet！！</p>
+</div>
+
+<%= form_with(model: @post, local: true, id: 'aaa') do |form| %>
+  <div class="form-group">
+    <p>背景画像選択</p>
+    <label><%= form.radio_button :kind, "kokuban" %><%= image_tag 'kokuban.jpg', width: '90' %></label>
+    <label><%= form.radio_button :kind, "rich" %><%= image_tag 'rich.jpg', width: '90' %></label>
+    <label><%= form.radio_button :kind, "speech" %><%= image_tag 'speech.jpg', width: '90' %></label>
+    <label><%= form.radio_button :kind, "hukidashi" %><%= image_tag 'hukidashi.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "muscle" %><%= image_tag 'muscle.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "endo1" %><%= image_tag 'endo1.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "endo2" %><%= image_tag 'endo2.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "muscle_man" %><%= image_tag 'muscle_man.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "muscle_woman" %><%= image_tag 'muscle_woman.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "protein" %><%= image_tag 'protein.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "happy" %><%= image_tag 'happy.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "cry" %><%= image_tag 'cry.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "hacker" %><%= image_tag 'hacker.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "ojisan" %><%= image_tag 'ojisan.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "horse" %><%= image_tag 'horse.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "gengou" %><%= image_tag 'gengou.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "monthend" %><%= image_tag 'monthend.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "monthgoal" %><%= image_tag 'monthgoal.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "todaygoal" %><%= image_tag 'todaygoal.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "todayword" %><%= image_tag 'todayword.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "year" %><%= image_tag 'year.png', width: '90' %></label>
+    <label><%= form.radio_button :kind, "black" %><%= image_tag 'black.jpg', width: '90' %></label>
+    <label><%= form.radio_button :kind, "white" %><%= image_tag 'white.jpg', width: '90' %></label>
+  </div>
+
+  <div class="form-group">
+    <p>画像内の文字入力</p>
+    <%= form.text_area :input, id: 'input', class:'form-control', rows:"3" %>
+  </div>
+
+  <p>プレビュー</p>
+  <div id="screenshot-target">
+    <img id="preview-image" width="315">
+    <p id="preview-font"></p>
+  </div>
+  <br>
+<% end %>
+
+<button id="left" class="up share_btn"><i class="fa fa-arrow-left"></i></button>
+<button id="down" class="up share_btn"><i class="fa fa-arrow-down"></i></button>
+<button id="up" class="up share_btn"><i class="fa fa-arrow-up"></i></button>
+<button id="right" class="up share_btn"><i class="fa fa-arrow-right"></i></button>
+<br>
+<br>
+<button id="word-bigger" class="size share_btn"><i class="fa fa-search-plus"></i></button>
+<button id="word-smaller" class="size share_btn"><i class="fa fa-search-minus"></i></button>
+<button id="vertical" class="vertical share_btn"><i class="fa fa-ellipsis-v"></i></button>
+<button id="font-color" class="font-color share_btn"><i class="fa fa-tint"></i></button>
+<button id="font" class="font-color share_btn"><i class="fa fa-font"></i></button>
+<br>
+<br>
+<button id="save-button" class="square_btn"><i class="fa fa-check"></i> 画像を確認する</button>
+<input style="display: none;" id="copyTarget" type="text" value="コピー">

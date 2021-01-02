@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bigtweet</title>
+    <title>Bigtweet2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <%# モーダル表示用のSweeaAlert2の読み込み %>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <%# フォント変更で使用するGoogleFontの読み込み %>
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+
+    <%# レスポンシブ対応 %>
+    <meta name="viewport" content="width=device-width">
+
+    <%# Twitterカード %>
+    <% twitter_card = get_twitter_card_info(@hash ? @hash : nil) %>
+    <meta name="twitter:card" content=<%=twitter_card[:card]%> />
+    <meta property="og:url" content=<%=twitter_card[:url]%> />
+    <meta property="og:title" content=<%=twitter_card[:title]%> />
+    <meta property="og:description" content=<%=twitter_card[:description]%> />
+    <meta property="og:image" content=<%=twitter_card[:image]%> />
+  </head>
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
