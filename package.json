@@ -1,0 +1,7 @@
+{
+  "name": "bigtweet",
+  "private": true,
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.7"
+  }
+}
